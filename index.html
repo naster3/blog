@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>portafolios</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="fav-icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
 <body>
     <header>
         <div class="header-content ">
             <div class="logo">
-                <a href="../v1/index.html">
-                    <h1 class=" animate__animated animate__fadeInDown">naster<b>dev</b></h1>
+                <a href="/index.html"> 
+                 <img src="/images/Devnaster-rojo.png" alt="">
                 </a>
             </div>
     
@@ -20,10 +22,10 @@
                 <nav>
                     <ul>
                         <li>
-                            <a href="../v1/index.html">
+                            <a href="/index.html">
                                 <i class="fas fa-home"></i> Inicio</a>
                         </li>
-                        <li class="menu-selected">
+                        <!--<li class="menu-selected">
                             <a href="../v1/adorable-azimuth/src/pages/index.astro" class="text-menu-selected">Cursos</a>
                         </li>
                         <li>
@@ -32,7 +34,7 @@
                         <li>
                             <a href="../v1/contacto.html">
                                 <i class="fas fa-headset"></i> Contacto</a>
-                        </li>
+                        </li>-->
                         <!-- <li>
                                 <a class="btn" href="#">registrate</a>
                                 <a class="btn" href="#">login</a>
@@ -43,7 +45,7 @@
         </div>
     
         <div id="icon-menu">
-            <i class="fas fa-bars"></i>
+            <i class="bi bi-justify"></i>
         </div>
     </header>
     <section id="blog">
@@ -52,13 +54,13 @@
             <h1>mi app</h1>
         </div>
         <ul class="proyect-header">
-            <li class="list activate">todo</li>
-            <li class="list activate">python</li>
+            <li class="list activate" onclick="seleccionarTodo()">todo</li>
+            <li class="list activate" onclick="seleccionarpython()">python</li>
             <li class="list activate">php</li>
             <li class="list activate">c#</li>
             <li class="list activate">js</li>
         </ul>
-        <div class="blog-container">
+        <div  id="mi-textarea" class="blog-container">
             <div class="blog-box">
                 <div class="blog-img">
                     <a href="http://" class="box">
@@ -72,17 +74,16 @@
             </div>
             <div class="blog-box">
                 <div class="blog-img">
-                    <a href="http://" class="box">
-                    <img src="./images/blog-1.jpeg" alt="">
+                    <a href="./doc/block.html" class="box">
+                    <img src="./images/Captura de pantalla (27).png" alt="">
                     </a>
                 </div>
                 <div class="blog-text">
-                    <span>18</span>
+                    <span>block de notas</span>
                  
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, obcaecati iusto. Laborum soluta tempore
-                        cumque excepturi a neque nihil iste, minus ipsum officia distinctio, necessitatibus sint porro quibusdam
-                        veritatis dolore!</p>
+                    <p>Block de Notas: tu herramienta para capturar y organizar ideas de forma simple y rápida.</p>
                 </div>
+                <span id="mi-python" class="etiquetas">python</span>
             </div>
             <div class="blog-box">
                 <div class="blog-img">
@@ -101,5 +102,75 @@
         </div>
         
     </section>
+    <section>
+        <div class="login-box">
+            <img src="images/Devnaster-blanco-y-negro.png" class="avatar" alt="Avatar Image">
+            <h1>Login Here</h1>
+            <form onsubmit="mail(); reset(); return false;">
+                <!-- USERNAME INPUT -->
+                <label for="username">Username</label>
+                <input type="text" placeholder="Enter Username" id="name">
+                <!-- PASSWORD INPUT -->
+                <label for="password">Password</label>
+                <input type="password" placeholder="Enter Password" id="pass">
+                <label for="message">message</label>
+                <input type="text" placeholder="" id="message">
+                <input type="submit" value="Log In">
+                <a href="#">Lost your Password?</a><br>
+                <a href="#">Don't have An account?</a>
+            </form>
+        </div>
+    </section>
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                <a href="#">
+                    <img src="/images/Devnaster-rojo.png" id="avatar" alt="">
+                </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>indice</h2>
+                <p>hola soy naster este es mi portafolios personal aqui pueden ver tanto mi trabajo personal como mi experiencia en el desarrollo de software.</p>
+                <p>si requieren mi servicion pueden entrar en contactos o en redes sociales ahi podran ver mi contenido y lo servicios que hago, un saludo!</p>
+            </div>
+            <div class="box">
+                <div class="red-social">
+                <h2>redes sociales</h2>
+                <a href="" class="bi bi-instagram">instagram</a>
+                <a href="" class="bi bi-github">github</a>
+                <a href="" class="bi bi-discord">discord</a>
+                <!--<a href=""></a>
+                <a href=""></a>-->
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+<small>&copy; 2023 <b>devnaster</b>- Todos Derechos Reservados</small>
+        </div>
+    </footer>
+    <script src="/main.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    
+    <script>
+        function mail(){
+            let name= document.getElementById("name").value;
+            let email= document.getElementById("pass").value;
+            let message= document.getElementById("message").value;
+            Email.send({
+
+                Host: "smtp.elasticemail.com",
+                Username: "username",
+                Password: "password",
+                To: 'them@website.com',
+                From: "you@isp.com",
+                Subject: "This is the subject",
+                Body: "And this is the body"
+            }).then(
+                message => alert(message)
+            );
+        }
+    </script>
 </body>
 </html>
